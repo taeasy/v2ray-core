@@ -35,14 +35,16 @@ var (
 		1: "AES_128_GCM",
 		2: "AES_256_GCM",
 		3: "CHACHA20_POLY1305",
-		4: "NONE",
+		4: "CHACHA20_IETF"
+		5: "NONE",
 	}
 	CipherType_value = map[string]int32{
 		"UNKNOWN":           0,
 		"AES_128_GCM":       1,
 		"AES_256_GCM":       2,
 		"CHACHA20_POLY1305": 3,
-		"NONE":              4,
+		"CHACHA20_IETF":     4
+		"NONE":              5,
 	}
 )
 
