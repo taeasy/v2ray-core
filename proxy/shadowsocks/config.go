@@ -81,6 +81,12 @@ func (a *Account) getCipher() (Cipher, error) {
 			IVBytes:         32,
 			AEADAuthCreator: createChaCha20Poly1305,
 		}, nil
+	case CipherType_CHACHA20_IETF:
+		return &AEADCipher{
+			KeyBytes:        12,
+			IVBytes:         12,
+			AEADAuthCreator: createChaCha20Poly1305,
+		}, nil
 	case CipherType_NONE:
 		return NoneCipher{}, nil
 	default:
@@ -218,6 +224,8 @@ func CipherFromString(c string) CipherType {
 		return CipherType_AES_256_GCM
 	case "chacha20-poly1305", "chacha20_poly1305", "aead_chacha20_poly1305", "chacha20-ietf-poly1305":
 		return CipherType_CHACHA20_POLY1305
+	case "chacha20-ietf":
+		return CipherType_CHACHA20_IETF
 	case "none", "plain":
 		return CipherType_NONE
 	default:
