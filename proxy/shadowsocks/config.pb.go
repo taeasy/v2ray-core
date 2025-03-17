@@ -25,6 +25,7 @@ const (
 	CipherType_AES_128_GCM       CipherType = 1
 	CipherType_AES_256_GCM       CipherType = 2
 	CipherType_CHACHA20_POLY1305 CipherType = 3
+	CipherType_CHACHA20_IETF     CipherType = 4
 	CipherType_NONE              CipherType = 4
 )
 
@@ -35,7 +36,7 @@ var (
 		1: "AES_128_GCM",
 		2: "AES_256_GCM",
 		3: "CHACHA20_POLY1305",
-		4: "CHACHA20_IETF"
+		4: "CHACHA20_IETF",
 		5: "NONE",
 	}
 	CipherType_value = map[string]int32{
@@ -43,7 +44,7 @@ var (
 		"AES_128_GCM":       1,
 		"AES_256_GCM":       2,
 		"CHACHA20_POLY1305": 3,
-		"CHACHA20_IETF":     4
+		"CHACHA20_IETF":     4,
 		"NONE":              5,
 	}
 )
